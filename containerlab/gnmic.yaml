@@ -1,0 +1,47 @@
+# © 2022 Nokia.
+
+username: admin
+#password: NokiaSrl1!
+password: nathan35
+#skip-verify: true
+insecure: true
+encoding: json_ietf
+log: true
+timeout: 60s
+
+## Example of loader
+
+loader:
+  type: docker
+  filters:
+    - containers:
+      - #label=clab-node-kind: srl
+        label=clab-node-kind: vr-sros
+        label=containerlab: lab13
+
+# You can also use 'targets:' to specify a node
+
+#targets:
+#  clab-lab13-R1_7:
+#    address: 172.100.20.5:57400
+
+# Example of subscriptions
+
+subscriptions:
+  # Add subscriptions configuration here
+  # e.g:
+  sub1:
+    paths:
+      - /system/memory/state/physical
+    stream-mode: sample
+    sample-interval: 10s
+
+
+outputs:
+  influxdb-output:
+    type: influxdb
+    url: http://clab-lab13-influxdb:8086
+    bucket: telemetry # db name
+    token: gnmic:gnmic123 # username:password
+    batch-size: 1000
+    flush-timer: 10s
