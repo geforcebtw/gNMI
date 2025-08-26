@@ -1,17 +1,18 @@
-## You can find all the official documentation here : https://github.com/openconfig/gnmic
+*You can find all the official documentation here : https://github.com/openconfig/gnmic*
 
-What is gNMI ? (gRPC Network Management Interface)
+
+## What is gNMI ? (gRPC Network Management Interface)
 
 Is an open telemetry protocol defined by openconfig that permit to question and subscribe to YANG paths.
 Some YANG paths examples : 
-  -  /interfaces/interface/state/counters
-  -  /network-instances/network-instance/protocols/protocol/bgp
+  -  ``/interfaces/interface/state/counters``
+  -  ``/network-instances/network-instance/protocols/protocol/bgp``
 gNMI works on gRPC with TLS encryption.
 
 SR LINUX are the Data source and played the role of gNMIC target (server).
 
 
-What is gNMIC ? (gRPC Network Management Interface Client)
+## What is gNMIC ? (gRPC Network Management Interface Client)
 
 - It's a client that automatically discovered SR Linux (over Docker labels with loader.docker)
 - Establish secured gNMI session with every SRL (SR Linux)
@@ -20,9 +21,9 @@ What is gNMIC ? (gRPC Network Management Interface Client)
 
 
 
-How to instantiate them ? 
+## How to instantiate them ? 
 
-In the yaml topology of containerlab.
+In the yaml topology of containerlab. (refer to the ``/containerlab/influxdb.clab.yaml`` && ``/containerlab/gnmic.yaml`` for full details)
 
 SR Linux : 
 
