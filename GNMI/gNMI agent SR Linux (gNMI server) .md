@@ -1,18 +1,18 @@
-SR Linux natively includes a gNMI server
-It is integrated into mgmt-server, a component of SR Linux's management plane (comparable to NETCONF/RESTCONF on other operating systems)
+*SR Linux natively includes a gNMI server*
+*It is integrated into mgmt-server, a component of SR Linux's management plane (comparable to NETCONF/RESTCONF on other operating systems)*
 
 
-Agent working : 
+## Agent working : 
 
 - Listen in gRPC/TLS on the 57400 port
 - Exposed all YANG data
 - Support :
-  - Get
-  - Subscribe
-  - Set
-  - Capabilities
+  - ``Get``
+  - ``Subscribe``
+  - ``Set``
+  - ``Capabilities``
 
-
+## Authentification
 That's how the authentification with the gNMIC module works : 
 
 
